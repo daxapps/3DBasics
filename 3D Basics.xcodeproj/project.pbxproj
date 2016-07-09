@@ -13,6 +13,9 @@
 		5F16F90B1D2FFFE4007D88D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F16F9091D2FFFE4007D88D7 /* Main.storyboard */; };
 		5F16F90D1D2FFFE4007D88D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F16F90C1D2FFFE4007D88D7 /* Assets.xcassets */; };
 		5F16F9101D2FFFE4007D88D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F16F90E1D2FFFE4007D88D7 /* LaunchScreen.storyboard */; };
+		5F16F91A1D300E07007D88D7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F9191D300E07007D88D7 /* GameScene.swift */; };
+		5F16F91C1D3093B2007D88D7 /* CustomSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F91B1D3093B2007D88D7 /* CustomSCNNode.swift */; };
+		5F16F91E1D309574007D88D7 /* GeometryNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F91D1D309574007D88D7 /* GeometryNodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5F16F90C1D2FFFE4007D88D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F16F90F1D2FFFE4007D88D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F16F9111D2FFFE4007D88D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F16F9191D300E07007D88D7 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
+		5F16F91B1D3093B2007D88D7 /* CustomSCNNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSCNNode.swift; sourceTree = "<group>"; };
+		5F16F91D1D309574007D88D7 /* GeometryNodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryNodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				5F16F90C1D2FFFE4007D88D7 /* Assets.xcassets */,
 				5F16F90E1D2FFFE4007D88D7 /* LaunchScreen.storyboard */,
 				5F16F9111D2FFFE4007D88D7 /* Info.plist */,
+				5F16F9191D300E07007D88D7 /* GameScene.swift */,
+				5F16F91B1D3093B2007D88D7 /* CustomSCNNode.swift */,
+				5F16F91D1D309574007D88D7 /* GeometryNodes.swift */,
 			);
 			path = "3D Basics";
 			sourceTree = "<group>";
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F16F91A1D300E07007D88D7 /* GameScene.swift in Sources */,
 				5F16F9081D2FFFE4007D88D7 /* GameViewController.swift in Sources */,
+				5F16F91E1D309574007D88D7 /* GeometryNodes.swift in Sources */,
 				5F16F9041D2FFFE4007D88D7 /* AppDelegate.swift in Sources */,
+				5F16F91C1D3093B2007D88D7 /* CustomSCNNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "3D Basics/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.daxapps.-D-Basics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -267,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "3D Basics/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.daxapps.-D-Basics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
