@@ -27,8 +27,10 @@ class GameViewController: UIViewController {
             view.backgroundColor = UIColor.blackColor()
             view.antialiasingMode = SCNAntialiasingMode.Multisampling4X
             
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(GameViewController.handlePan(_:)))
+            let panGesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
+            let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
             view.addGestureRecognizer(panGesture)
+            view.addGestureRecognizer(tapGesture)
             
         }
         
@@ -39,6 +41,31 @@ class GameViewController: UIViewController {
         let translation = gesture.translationInView(sceneView!).x
         
         print(translation)
+        
+        let xTranslation = Float(translation / view.frame.width)
+        
+        if gesture.state == UIGestureRecognizerState.Began || gesture.state == UIGestureRecognizerState.Changed {
+            scene.geometryNodes.slide(xTranslation)
+            
+        } else if gesture.state == UIGestureRecognizerState.Ended {
+            if translation > 100 {
+                scene.geometryNodes.realign("RIGHT")
+            } else if translation < -100 {
+                scene.geometryNodes.realign("LEFT")
+            } else {
+                scene.geometryNodes.realign("STAY")
+            }
+        }
+        
+    }
+    
+    func handleTap(gesture: UITapGestureRecognizer) {
+        
+        if scene.cameraNode.camera!.usesOrthographicProjection == true {
+            scene.cameraNode.camera!.usesOrthographicProjection = false
+        } else {
+            scene.cameraNode.camera!.usesOrthographicProjection = true
+        }
         
     }
     

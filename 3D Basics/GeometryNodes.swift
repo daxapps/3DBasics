@@ -41,7 +41,59 @@ class GeometryNodes {
         
     }
     
+    func slideFunction(node: CustomSCNNode, translation: Float) {
+        
+        node.position.x = node.positionToSlideFrom.x + translation
+        
+    }
+    
+    func slide(xTranslation: Float) {
+        
+        slideFunction(cube, translation: xTranslation)
+        slideFunction(sphere, translation: xTranslation)
+        slideFunction(pyramid, translation: xTranslation)
+        
+    }
+    
+    func realignFunction(node: CustomSCNNode, direction: String) {
+        
+        var animationTime = 0.3
+        
+        if direction == "LEFT" {
+            node.positionToSlideFrom.x   -= 2.0
+        } else if direction == "RIGHT" {
+            node.positionToSlideFrom.x += 2.0
+            
+        }
+        
+        if node.positionToSlideFrom.x > 2.0 {
+            node.positionToSlideFrom.x = -2.0
+            animationTime = 0
+        } else if node.positionToSlideFrom.x < -2.0 {
+            node.positionToSlideFrom.x = 2.0
+            animationTime = 0
+        }
+        
+        let move = SCNAction.moveTo(node.positionToSlideFrom, duration: animationTime)
+        move.timingMode = SCNActionTimingMode.EaseInEaseOut
+        
+        node.runAction(move)
+    }
+    
+    func realign(direction: String) {
+        
+        realignFunction(cube, direction: direction)
+        realignFunction(pyramid, direction: direction)
+        realignFunction(sphere, direction: direction)
+        }
+    
 }
+
+
+
+
+
+
 
 
 

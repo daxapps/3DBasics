@@ -13,6 +13,8 @@ import SceneKit
 class GameScene: SCNScene {
     
     var geometryNodes = GeometryNodes()
+    let cameraNode = SCNNode()
+
     
     convenience init(create: Bool) {
         self.init()
@@ -27,7 +29,6 @@ class GameScene: SCNScene {
         let floorNode = SCNNode(geometry: floor)
         rootNode.addChildNode(floorNode)
         
-        let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         //cameraNode.camera!.usesOrthographicProjection = true
         cameraNode.position = SCNVector3(0, 1, 2)
