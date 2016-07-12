@@ -27,8 +27,8 @@ class GameViewController: UIViewController {
             view.backgroundColor = UIColor.blackColor()
             view.antialiasingMode = SCNAntialiasingMode.Multisampling4X
             
-            let panGesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
-            let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(GameViewController.handlePan(_:)))
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(GameViewController.handleTap(_:)))
             view.addGestureRecognizer(panGesture)
             view.addGestureRecognizer(tapGesture)
             
